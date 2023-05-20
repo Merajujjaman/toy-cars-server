@@ -1,0 +1,92 @@
+[
+    {
+        "picture": "https://rb.gy/aajq2",
+        "toy_name": "Velocity Racer",
+        "seller_name": "Toy Kingdom",
+        "category": "Sports",
+        "price": "$29.99",
+        "rating": 4.5,
+        "details": "Experience the thrill of speed with the Velocity Racer. This 1:32 scale model features a sturdy die-cast body, opening doors for added realism, and authentic rubber tires for enhanced grip. Perfect for collectors and young car enthusiasts alike, it's a must-have for every racing fan. Available in limited quantities.",
+        "available_quantity": 10
+    },
+    {
+        "picture": "https://rb.gy/r50m6",
+        "toy_name": "Turbo Charger",
+        "seller_name": "Super Toy Store",
+        "category": "Sports",
+        "price": "$19.99",
+        "rating": 4.2,
+        "details": "Get ready to rev up the excitement with the Turbo Charger. This 1:24 scale model features a sleek plastic body, pull-back action for high-speed launches, and cool LED headlights that illuminate the way. With its dynamic design and thrilling performance, it's the ultimate toy car for racing enthusiasts. Limited stock available.",
+        "available_quantity": 5
+    },
+    {
+        "picture": "https://rb.gy/1vhlg",
+        "toy_name": "Racing Thunder",
+        "seller_name": "Toytopia",
+        "category": "Sports",
+        "price": "$24.99",
+        "rating": 4.8,
+        "details": "Take control of the track with the Racing Thunder. This impressive 1:18 scale model boasts a sturdy metal body, realistic remote-controlled operation for precise maneuvers, and an adjustable suspension system for smooth racing action. With its high-performance features and stunning design, it's the perfect choice for aspiring racers. Limited quantities available.",
+        "available_quantity": 8
+    },
+    {
+        "picture": "https://images-na.ssl-images-amazon.com/images/I/51x4O2UFZ-L._AC_UL600_SR600,600_.jpg",
+        "toy_name": "Mighty Hauler",
+        "seller_name": "Toy Emporium",
+        "category": "Truck",
+        "price": "$39.99",
+        "rating": 4.5,
+        "details": "Get ready for some heavy-duty fun with the Mighty Hauler toy truck. This rugged 1:16 scale model features a sturdy construction, realistic sound effects, and working headlights. With its detachable trailer and movable parts, little ones can transport their cargo anywhere. Limited stock available, grab yours now!",
+        "available_quantity": 12
+    },
+    {
+        "picture": "https://m.media-amazon.com/images/I/51rB-lE9+hL._AC_.jpg",
+        "toy_name": "Off-Road Explorer",
+        "seller_name": "Adventure Toys",
+        "category": "Truck",
+        "price": "$29.99",
+        "rating": 4.2,
+        "details": "Embark on thrilling off-road adventures with the Off-Road Explorer toy truck. This 1:24 scale model features a rugged design, oversized wheels for superior traction, and a suspension system for smooth rides over rough terrain. With its realistic styling and durability, it's perfect for outdoor play. Limited quantities available.",
+        "available_quantity": 8
+    },
+    {
+        "picture": "https://www.toysrus.co.za/media/catalog/product/cache/924d35e0c420b57e9fc2103a1522e700/1/9/194735036059_imageoutofpack.png",
+        "toy_name": "Monster Hauler",
+        "seller_name": "Toyz R Us",
+        "category": "Truck",
+        "price": "$49.99",
+        "rating": 4.8,
+        "details": "Unleash the beast with the Monster Hauler toy truck. This powerful 1:12 scale model features a monstrous design, oversized wheels, and a motorized action that allows it to climb over obstacles with ease. With its striking looks and impressive performance, it's the ultimate toy for truck enthusiasts. Limited stock available.",
+        "available_quantity": 5
+    },
+    {
+        "picture": "https://i.ytimg.com/vi/R8fxb77xRjY/maxresdefault.jpg",
+        "toy_name": "Patrol Pursuit",
+        "seller_name": "Toy Station",
+        "category": "Police",
+        "price": "$24.99",
+        "rating": 4.5,
+        "details": "Join the thrilling chase with the Patrol Pursuit toy police car. This 1:32 scale model features authentic police decals, flashing lights, and realistic siren sounds. With its sturdy construction and fast-moving wheels, little ones can create exciting police adventures. Limited stock available, get yours today!",
+        "available_quantity": 10
+    },
+    {
+        "picture": "https://m.media-amazon.com/images/I/51kyPAnEfaL._AC_.jpg",
+        "toy_name": "Siren Speedster",
+        "seller_name": "Playtime Toys",
+        "category": "Police",
+        "price": "$19.99",
+        "rating": 4.2,
+        "details": "Experience the action-packed world of law enforcement with the Siren Speedster toy police car. This 1:24 scale model features a sleek design, working LED lights, and a realistic police siren. With its smooth wheels and easy maneuverability, it's perfect for endless high-speed pursuits. Limited quantities available.",
+        "available_quantity": 5
+    },
+    {
+        "picture": "https://ae01.alicdn.com/kf/Hf792012439c841748de6448b4f0f5813m.jpg",
+        "toy_name": "Ultimate Enforcer",
+        "seller_name": "Super Toys Inc.",
+        "category": "Police",
+        "price": "$29.99",
+        "rating": 4.8,
+        "details": "Maintain law and order with the Ultimate Enforcer toy police car. This impressive 1:18 scale model features a robust build, working doors, and a powerful motor for rapid response action. With its authentic police design and advanced features, it's the ultimate choice for aspiring young officers. Limited stock available.",
+        "available_quantity": 8
+    }
+]
