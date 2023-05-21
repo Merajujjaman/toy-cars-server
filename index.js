@@ -30,6 +30,11 @@ async function run() {
         const carsCollention = client.db('toysDB').collection('cars');
         const sellerToyCollention = client.db('toysDB').collection('sellerToy');
 
+        //indexing:
+        const indexKeys = { toy_name: 1, category: 1 }
+        const indexName = { name: "nameCategory" }
+        const result = await sellerToyCollention.createIndex(indexKeys, indexName)
+
         app.get('/cars/:category', async (req, res) => {
             const carsCategory = req.params.category
 
@@ -75,19 +80,46 @@ async function run() {
             // console.log(req.query.email);
             const email = req?.query?.email
 
-            const query = { seller_email: email}
+            const query = { seller_email: email }
             const result = await sellerToyCollention.find(query).toArray()
             res.send(result)
 
         })
 
-        app.delete('/seller/:id', async(req, res) => {
+        app.delete('/seller/:id', async (req, res) => {
             const id = req.params.id;
-            const query ={_id: new ObjectId(id)}
+            const query = { _id: new ObjectId(id) }
             const result = await sellerToyCollention.deleteOne(query)
             res.json(result)
-            console.log(id);
+            
         })
+
+        app.patch('/seller/:id', async (req, res) => {
+            const id = req.params.id;
+            const updateData = req.body
+            const filter = { _id: new ObjectId(id) }
+            const updateInfo = {
+                $set: {
+                    ...updateData
+                }
+            }
+            const result = await sellerToyCollention.updateOne(filter, updateInfo)
+            res.send(result)
+            // console.log(id, updateData);
+        })
+
+        app.get("/search/:text", async (req, res) => {
+            const searchText = req.params.text;
+            const result = await sellerToyCollention
+                .find({
+                    $or: [
+                        { toy_name: { $regex: searchText, $options: "i" } },
+                        { category: { $regex: searchText, $options: "i" } },
+                    ],
+                })
+                .toArray();
+            res.send(result);
+        });
 
 
 
