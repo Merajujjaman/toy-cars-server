@@ -15,46 +15,89 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
 });
 
 async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    try {
+        // Connect the client to the server	(optional starting in v4.7)
+        await client.connect();
 
-    const carsCollention = client.db('toysDB').collection('cars');
-    
-    app.get('/cars/:category', async(req, res) => {
-        const carsCategory = req.params.category
-        
-        const filter = {category: carsCategory}
-        const result = await carsCollention.find(filter).toArray()
-        res.send(result)
-    })
+        const carsCollention = client.db('toysDB').collection('cars');
+        const sellerToyCollention = client.db('toysDB').collection('sellerToy');
 
-    app.get('/details/:id', async(req, res) => {
-        const id = req.params.id;
-        
-        const query = {_id: new ObjectId(id)}
-        
-        const result = await carsCollention.findOne(query);
-        res.send(result)
-    })
+        app.get('/cars/:category', async (req, res) => {
+            const carsCategory = req.params.category
+
+            const filter = { category: carsCategory }
+            const result = await carsCollention.find(filter).toArray()
+            res.send(result)
+        })
+
+        app.get('/details/:id', async (req, res) => {
+            const id = req.params.id;
+
+            const query = { _id: new ObjectId(id) }
+
+            const result = await carsCollention.findOne(query);
+            res.send(result)
+        })
+
+        // seller toy collection
+
+        app.post('/addToy', async (req, res) => {
+            const toyData = req.body;
+            // console.log(toyData);
+
+            const result = await sellerToyCollention.insertOne(toyData)
+            res.send(result)
+        })
+
+        app.get('/addToy', async (req, res) => {
+
+            const result = await sellerToyCollention.find().limit(20).toArray()
+            res.send(result)
+
+        })
+
+        app.get('/addToy/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) }
+            const result = await sellerToyCollention.findOne(query);
+            res.send(result)
+        })
+
+        app.get('/seller', async (req, res) => {
+            // console.log(req.query.email);
+            const email = req?.query?.email
+
+            const query = { seller_email: email}
+            const result = await sellerToyCollention.find(query).toArray()
+            res.send(result)
+
+        })
+
+        app.delete('/seller/:id', async(req, res) => {
+            const id = req.params.id;
+            const query ={_id: new ObjectId(id)}
+            const result = await sellerToyCollention.deleteOne(query)
+            res.json(result)
+            console.log(id);
+        })
 
 
-    
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    // await client.close();
-  }
+
+        // Send a ping to confirm a successful connection
+        await client.db("admin").command({ ping: 1 });
+        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    } finally {
+        // Ensures that the client will close when you finish/error
+        // await client.close();
+    }
 }
 run().catch(console.dir);
 
